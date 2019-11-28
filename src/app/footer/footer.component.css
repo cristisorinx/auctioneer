@@ -1,7 +1,24 @@
 footer {
-    display: flex;
-    position: fixed;
+    /* display: flex; */
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
+}
+
+.container{
+    margin: auto;
+    width: 100%;
+    padding: 0;
+}
+
+#rights, a{
+    color: grey;
+    text-decoration: none;
+}
+
+.navbar-brand{
+    font-family:'Kanit', sans-serif ;
+    font-size: x-large;
+    color: white;
 }

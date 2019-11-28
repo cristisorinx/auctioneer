@@ -6,7 +6,7 @@ import { AuctionHouseComponent } from './auction-house/auction-house.component';
 
 
 const routes: Routes = [
-  {path:'', component: HomeComponent},
+  {path:'', redirectTo:'/home', pathMatch:'full'},
   {path:'auctionHouse', component: AuctionHouseComponent},
   {path:'home', component:HomeComponent},
   {path:'about', component:AboutComponent}

@@ -1,0 +1,14 @@
+h2 {
+    font-weight: bold;
+    margin: 1em 1em;
+}
+
+p{
+    
+    border-top: 2px dashed #007bff;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin: 1em 1em;
+    padding: 1em 1em;
+    font-family: Verdana, sans-serif;
+}

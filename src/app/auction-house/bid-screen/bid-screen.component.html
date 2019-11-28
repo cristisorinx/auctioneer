@@ -1,1 +1,73 @@
-<p>bid-screen works!</p>
+<div class="container">
+    <h1 class="text-center">Auction House</h1>
+
+    <div class="row justify-content-center" id="main">
+        <div class="container col-md-8">
+            <ul class="list-group">
+                <label for="price">Current Offer</label>
+                <li class="list-group-item list-group-item-light col-md-2" id="price">
+                    {{ price }}$
+                </li>
+                <label for="time">Time Left</label>
+                <li class="list-group-item col-md-4" id="time">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Time Left</span>
+                        <span class="input-group-text">{{ time }}</span>
+                    </div>
+                </li>
+                <label for="winner">Current Winner</label>
+                <li class="list-group-item col-md-4" id="winner">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">You</span>
+                        <span class="input-group-text">Computer</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- <div class="box col-md-6">
+        <div class="column" id="cof">
+            <label for="offer">Current Offer</label>
+            <div id="offer">
+                <h1 class="text-center"> {{ price }}$</h1>
+            </div>
+        </div>
+        <div class="row">
+            <label for="offer">Current Offer</label>
+            <div id="">
+                <h1 class="text-center"> {{ price }}$</h1>
+            </div>
+        </div>
+        <div class="row">
+                <label for="offer">Current Offer</label>
+                <div id="">
+                    <h1 class="text-center"> {{ price }}$</h1>
+                </div>
+            </div>
+    </div> -->
+
+    <h5 class="text-center">Place your Bid</h5>
+
+    <div class="row justify-content-center">
+        <div class="input-group input-group-large col-md-2 row-md-2">
+            <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+            </div>
+                
+            <input ngModel
+                type="number" 
+                class="form-control"
+                name="amount"
+                placeholder="Amount" 
+                #amount = "ngModel"  
+                required
+                pattern="[1-9][0-9]*">            
+        </div>
+        
+        <button class="btn btn-primary" 
+        [disabled]="amount.invalid" (click)="bid()">
+            Bid Amount
+        </button>
+    </div>
+</div>

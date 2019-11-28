@@ -1,0 +1,13 @@
+.navbar-brand{
+    font-family:'Kanit', sans-serif ;
+    font-size: x-large;
+}
+
+ul>li{
+    font-weight: 400;
+    font-size: large;
+}
+
+.active>.nav-link{
+    font-weight: bold;
+}

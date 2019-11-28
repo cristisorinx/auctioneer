@@ -1,0 +1,17 @@
+div #main {
+    background-color: rgb(161, 186, 255);
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    /* display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;*/
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+#price {
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 8px rgb(78, 77, 77);
+    background-color: white;
+}

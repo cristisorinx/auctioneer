@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BidScreenComponent } from '../bid-screen/bid-screen.component';
 
 @Component({
   selector: 'app-bid-history',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BidHistoryComponent implements OnInit {
 
-  constructor() { }
+  bidsNumber = this.bidNum.bids;
+  constructor(private bidNum: BidScreenComponent) { }
 
   ngOnInit() {
   }
-
 }
