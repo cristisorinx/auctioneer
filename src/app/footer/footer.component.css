@@ -1,18 +1,16 @@
-footer {
-    /* display: flex; */
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-}
-
 .container{
-    margin: auto;
+    margin: 20px auto;
     width: 100%;
     padding: 0;
 }
 
-#rights, a{
+#rights{
+    padding-top: 10px;
+    color: grey;
+    float: right;
+}
+
+#rights>a {
     color: grey;
     text-decoration: none;
 }
@@ -21,4 +19,8 @@ footer {
     font-family:'Kanit', sans-serif ;
     font-size: x-large;
     color: white;
+}
+
+footer{
+    margin-top: 20px;
 }

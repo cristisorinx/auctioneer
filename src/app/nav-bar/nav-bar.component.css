@@ -1,6 +1,7 @@
 .navbar-brand{
     font-family:'Kanit', sans-serif ;
     font-size: x-large;
+    padding-left: 30px;
 }
 
 ul>li{

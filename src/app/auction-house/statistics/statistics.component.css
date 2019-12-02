@@ -1,0 +1,16 @@
+.position{
+    padding-top: 10px;
+    padding-left: 18px;
+    font-weight: bold;
+    color: grey;
+}
+
+#header{
+    padding: 20px 0;
+}
+
+.container-fluid {
+    height: auto;
+    min-height: 300px;
+    padding-bottom: 80px;
+}

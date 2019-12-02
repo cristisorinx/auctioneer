@@ -1,17 +1,71 @@
 div #main {
-    background-color: rgb(161, 186, 255);
+    background-color: #edf3ff;
     border: 2px solid #007bff;
     border-radius: 10px;
-    /* display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;*/
+    position: relative;
+}
+
+.center-item, ul>li {
     margin-left: auto;
     margin-right: auto; 
 }
 
+ul>li{
+    margin-bottom: 20px;
+}
+
+.wrapper{
+    margin-left: 5px;
+    overflow: hidden;
+}
+
+#list{
+    float: left;
+    padding: 20px 0px 0px 20px;
+    font-weight: bold;
+}
+
+.bidWindow{
+    font-weight: bold;
+    float: left;
+    padding: 20px 0;
+}
+
+#content {
+    position: relative;
+    top: 20%;
+    font-weight: bold;
+    font-size: 40px;
+}
+
 #price {
-    height: 200px;
+    padding:10px 15px;
+    height: 130px;
+    min-width: 190px;
     border-radius: 10px;
     box-shadow: inset 0 0 8px rgb(78, 77, 77);
+    background-color: white;
+    position: relative;
+}
+
+.winner{
+    color: white;
+    background-color: green;
+}
+
+#main{
+    height: auto;
+    padding-bottom: 30px;
+}
+
+#bidHeader{
+    padding-top: 20px;
+}
+
+#title {
+    padding: 10px 0;
+}
+
+#time{
     background-color: white;
 }

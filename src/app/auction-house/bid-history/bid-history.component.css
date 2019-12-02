@@ -21,11 +21,15 @@
     background-color: #4b4b4b; 
 }
 
-span{
+.bids{
     margin-left: 20px;
-    font-size: 16px;
+    font-size: 15px;
     background-color:#65c3df;
     color: white;
     border-radius: 10px;
-    padding: 3px 5px; 
+    padding: 5px 7px; 
+}
+
+#header{
+    padding: 20px 0;
 }
