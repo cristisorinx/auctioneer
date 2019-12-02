@@ -1,15 +1,30 @@
-<div class="container">
-    <h1 class="text-left">Statistics</h1>
-
+<div class="container-fluid">
+    <h1 class="text-left" id="header">Statistics</h1>
+    
     <div class="row">
         <div class="col-md-4">
-            <h4 class="text-left">Top Bids</h4>
+            <h4 class="text-left ">Top Bids</h4>
+            <div class="row" *ngFor="let el of topBids;let i = index;">
+                <h6 class="text-center position" *ngIf="[i] < 7">{{ el.amount }}$ {{ el.bidder }}</h6>
+            </div>
         </div>
         <div class="col-md-4">
             <h4 class="text-left">Total Bid Amount</h4>
+            <div class="row" >
+                <h6 class="text-center position">You: {{ playerTotalAmountBids }}$</h6>
+            </div>
+            <div class="row" >
+                <h6 class="text-center position">Computer: {{ computerTotalAmountBids }}$</h6>
+            </div>
         </div>
         <div class="col-md-4">
             <h4 class="text-left">Over Bidding</h4>
+            <div class="row" >
+                <h6 class="text-center position">You: {{ playerOverBid }}$</h6>
+            </div>
+            <div class="row" >
+                <h6 class="text-center position">Computer: {{ computerOverBid }}$</h6>
+            </div>
         </div>
     </div>
 </div>

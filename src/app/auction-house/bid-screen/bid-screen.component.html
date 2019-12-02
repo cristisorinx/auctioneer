@@ -1,56 +1,40 @@
-<div class="container">
-    <h1 class="text-center">Auction House</h1>
+<div class="container" id="main">
+    <h1 class="text-center" id="title">Auction House</h1>
 
-    <div class="row justify-content-center" id="main">
-        <div class="container col-md-8">
-            <ul class="list-group">
+    <div class="row col-md-6 center-item" id="main">
+        <div class="container wrapper">
+              <div class="bidWindow">
                 <label for="price">Current Offer</label>
-                <li class="list-group-item list-group-item-light col-md-2" id="price">
-                    {{ price }}$
-                </li>
+                <div class="text-center" id="price">
+                  <div id="content">
+                    {{ currentOffer }}$
+                  </div>
+                </div>
+              </div>
+
+            <ul class="list-group center-item" id="list">
                 <label for="time">Time Left</label>
-                <li class="list-group-item col-md-4" id="time">
-                    <div class="input-group-prepend">
+                <li class="list-item col-md-4">
+                    <div class="input-group-prepend justify-content-center">
                         <span class="input-group-text">Time Left</span>
-                        <span class="input-group-text">{{ time }}</span>
+                        <span class="input-group-text" id="time"></span>
                     </div>
                 </li>
                 <label for="winner">Current Winner</label>
-                <li class="list-group-item col-md-4" id="winner">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">You</span>
-                        <span class="input-group-text">Computer</span>
+                <li class="list-item col-md-4" id="winner">
+                    <div class="input-group-prepend justify-content-center">
+                        <span class="input-group-text" [ngClass]="{'winner': [winner]=='player'}">You</span>
+                        <span class="input-group-text" [ngClass]="{'winner': [winner]=='computer'}">Computer</span>
                     </div>
                 </li>
             </ul>
         </div>
     </div>
 
-    <!-- <div class="box col-md-6">
-        <div class="column" id="cof">
-            <label for="offer">Current Offer</label>
-            <div id="offer">
-                <h1 class="text-center"> {{ price }}$</h1>
-            </div>
-        </div>
-        <div class="row">
-            <label for="offer">Current Offer</label>
-            <div id="">
-                <h1 class="text-center"> {{ price }}$</h1>
-            </div>
-        </div>
-        <div class="row">
-                <label for="offer">Current Offer</label>
-                <div id="">
-                    <h1 class="text-center"> {{ price }}$</h1>
-                </div>
-            </div>
-    </div> -->
-
-    <h5 class="text-center">Place your Bid</h5>
+    <h5 class="text-center" id="bidHeader">Place your Bid</h5>
 
     <div class="row justify-content-center">
-        <div class="input-group input-group-large col-md-2 row-md-2">
+        <div class="input-group input-group-large col-md-3 row-md-2">
             <div class="input-group-prepend">
                 <span class="input-group-text">$</span>
             </div>
@@ -59,15 +43,20 @@
                 type="number" 
                 class="form-control"
                 name="amount"
+                id="bidValue"
                 placeholder="Amount" 
                 #amount = "ngModel"  
                 required
-                pattern="[1-9][0-9]*">            
+                pattern="[1-9][0-9]*"
+                [disabled]="disableBidInterface">            
         </div>
         
-        <button class="btn btn-primary" 
-        [disabled]="amount.invalid" (click)="bid()">
+        <button class="btn btn-primary" id="bidButton"
+        [disabled]="amount.invalid || disableBidInterface" (click)="playerBid()">
             Bid Amount
         </button>
+        <!-- <button class="btn btn-danger" (click)="stopBidding()">
+            STOP
+        </button> -->
     </div>
 </div>

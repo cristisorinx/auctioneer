@@ -1,20 +1,19 @@
 <div class="container"> 
-    <h1 class="text-left">Bid History <span> Total bids so far: {{ bidsNumber }}</span> </h1>
-
-    <div class="container-fluid scrollbar">
-        <div class="">
-            <div class="alert alert-danger ">
-                <p class="text-center">Some text</p>
-            </div>
-            <div class="alert alert-success ">
-                <p class="text-center">Some text</p>
-            </div>
-            <div class="alert alert-danger ">
-                <p class="text-center">Some text</p>
-            </div>
-            <div class="alert alert-danger ">
-                <p class="text-center">Some text</p>
-            </div>     
+    <h1 class="text-left" id="header">Bid History <span class="bids"> Total bids so far: {{ bidsNumber }}</span> </h1>
+    
+    <div class="container-fluid scrollbar">   
+        <div *ngFor="let el of bidHistory" >
+            <p *ngIf="el.bidder == 'Player'" class="text-center alert alert-success">
+                <span class="font-weight-bold">Well done !</span> 
+                You successfully bid <span class="font-weight-bold">{{ el.bidedAmount }}$.</span>
+                Making the current offer at<span class="font-weight-bold"> {{ el.currentOffer }}$.</span>
+            </p>
+            <p *ngIf="el.bidder == 'Computer'" class="text-center alert alert-danger">
+                <span class="font-weight-bold">Oh snap !</span> 
+                The <span class="font-weight-bold">{{ el.bidder }}</span> made a bid of 
+                <span class="font-weight-bold">{{ el.bidedAmount}}$.</span>
+                Making the current offer <span class="font-weight-bold"> {{ el.currentOffer }}$.</span>
+            </p>
         </div>
     </div>
 </div>
