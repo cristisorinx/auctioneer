@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { BidScreenComponent } from '../bid-screen/bid-screen.component';
+import { Component, OnInit, Input } from '@angular/core';
+import { ManageDataService } from 'src/app/shared/manage-data.service';
 
 @Component({
   selector: 'app-bid-history',
@@ -8,9 +8,19 @@ import { BidScreenComponent } from '../bid-screen/bid-screen.component';
 })
 export class BidHistoryComponent implements OnInit {
 
-  bidsNumber = this.bidNum.bids;
-  constructor(private bidNum: BidScreenComponent) { }
+  bidsNumber;
+  bidHistory;
+  
+  constructor(private bidHistoryService: ManageDataService) { }
 
   ngOnInit() {
+    this.bidHistory = [];
+    this.bidsNumber = 0;
+    
+    this.bidHistoryService.currentHistory.subscribe(respData => {
+      this.bidHistory.unshift(respData);
+      this.bidsNumber = respData.numberOfBids;
+    });
   }
+  
 }

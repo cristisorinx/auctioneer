@@ -9,7 +9,6 @@ export class AuctionHouseComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
